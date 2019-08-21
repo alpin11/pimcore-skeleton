@@ -1,0 +1,8 @@
+imports:
+    - { resource: parameters.yml }
+    - { resource: security.yml }
+    - { resource: services.yml }
+    - { resource: 'local/' }
+
+webpack_encore:
+    output_path: '%kernel.project_dir%/web/build'

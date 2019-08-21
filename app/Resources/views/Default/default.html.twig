@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="{{ app.request.locale|slice(0, 2) }}">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
+        {% spaceless -%}
+            {% if not document is defined or not document %}
+                {% set document = pimcore_document(1) %}
+            {% endif %}
+
+            {% if document is instanceof('\\Pimcore\\Model\\Document\\Link') %}
+                {# @var document \Pimcore\Model\Document\Link #}
+                {% set document = document.getObject() %}
+            {% endif %}
+
+            {% do pimcore_head_title().setSeparator(' : ') %}
+        {%- endspaceless %}
+
+        {% block layout_head_meta deferred %}
+        {{ pimcore_head_title() }}
+        {{ pimcore_head_meta() }}
+        {% endblock %}
+
+        {% block head_stylesheets deferred %}
+        {{ pimcore_head_link() }}
+        {% endblock %}
+
+        {% block metatags %}
+        {% endblock %}
+
+        {% block stylesheets %}
+            {% for css in encore_entry_css_files('global') %}
+                {% do pimcore_head_link().appendStylesheet(css) %}
+            {% endfor %}
+        {% endblock %}
+    </head>
+
+    <body>
+        <div id="site">
+            <div id="logo">
+                <a href="http://www.pimcore.com/"><img src="{{ asset('build/images/logo-claim-gray.svg') }}" style="width: 400px;" /></a>
+                <hr />
+            </div>
+
+            {% if editmode %}
+                <div class="buttons">
+                    <a target="_blank" href="https://www.pimcore.com/docs/5.0.0/Getting_Started/Installation.html">Install Sample Data / Boilerplate</a>
+                    <a target="_blank" href="https://www.pimcore.com/docs/5.0.0/Getting_Started/index.html">Getting Started</a>
+                </div>
+
+                <div class="info">
+                    <h2>Where can I edit some pages?</h2>
+                    <p>
+                        Well, it seems that you're using the professional distribution of pimcore which doesn't include any
+                        templates / themes or contents, it's designed to start a project from scratch. If you need a jump start
+                        please consider using our sample data / boilerplate package which includes everything you need to get started.
+                    </p>
+                </div>
+            {% endif %}
+        </div>
+
+        {% block javascripts %}
+            {% for js in encore_entry_js_files('app') %}
+                {% do pimcore_head_script().appendFile(js) %}
+            {% endfor %}
+        {% endblock %}
+
+        {% block scripts deferred %}
+            {{ pimcore_head_script() }}
+        {% endblock %}
+    </body>
+</html>
+
