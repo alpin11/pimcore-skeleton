@@ -19,12 +19,12 @@ Encore
     .enableTypeScriptLoader()
 
     // will output as web/build/app.js
-    .addEntry('project-name-scripts', './assets/js/app.js')
-    .addEntry('project-name-edit', './assets/js/edit.js')
+    .addEntry('app', './assets/js/app.js')
+    .addEntry('edit', './assets/js/edit.js')
 
     // will output as web/build/global.css
-    .addStyleEntry('project-name-styles', './assets/css/site.scss')
-    .addStyleEntry('project-name-editmode', './assets/css/editmode.scss')
+    .addStyleEntry('global', './assets/scss/app.scss')
+    .addStyleEntry('editmode', './assets/scss/editmode.scss')
 
     // allow sass/scss files to be processed
     .enableSassLoader()

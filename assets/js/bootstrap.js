@@ -26,3 +26,12 @@ window.axios = require('axios');
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 Vue.prototype.$http = window.axios;
+
+/**
+ * We will also add some frontend plugins. If not needed they can be deleted
+ * or commented
+ */
+window.AOS = require('aos');
+require('owl.carousel');
+
+AOS.init();
