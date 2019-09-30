@@ -12,7 +12,7 @@
     "coreshop/pimcore-bundle": "^2.1",
     "coreshop/seo-bundle": "^2.1",
     "dachcom-digital/toolbox": "^3",
-    "pimcore/pimcore": "^6.1.0",
+    "pimcore/pimcore": "^6.2.0",
     "symfony/symfony": "^4.3.0",
     "symfony/webpack-encore-bundle": "^1.0",
     "w-vision/pimcore-deployer": "^1.3"
