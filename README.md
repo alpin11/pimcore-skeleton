@@ -16,7 +16,7 @@ It comes pre-installed with following features
 
 **Create a new Project**
 ```
-composer create-project alpin11/pimcore-skeleton:6.0
+composer create-project alpin11/pimcore-skeleton:6.2
 ```
 
 **Start docker**
