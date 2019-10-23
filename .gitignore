@@ -18,6 +18,7 @@
 
 !/var/config
 /var/config/system.php
+/var/config/system.yml
 /var/config/debug-mode.php
 /var/config/maintenance.php
 
