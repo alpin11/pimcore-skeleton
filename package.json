@@ -19,7 +19,7 @@
     "cssnano": "^4.1.8",
     "import-glob-loader": "^1.1.0",
     "jquery": "^3.2.1",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "node-sass": "^4.5.3",
     "owl.carousel": "^2.3.4",
     "popper.js": "^1.14.3",
